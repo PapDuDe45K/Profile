@@ -1,0 +1,23 @@
+<!-- home.html -->
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="text-center custom-section">
+    <img src="{{ resume.image.url }}" alt="{{ resume.name }}" class="profile-picture">
+    <h1>Hello, I'm {{ resume.name }}!</h1>
+    <p>{{ resume.bio }}</p>
+    <div class="social-links">
+        {% if resume.linkedin %}
+            <a href="{{ resume.linkedin }}" target="_blank">
+                <button type="button" class="btn btn-primary">LinkedIn</button>
+            </a>
+        {% endif %}
+        {% if resume.github %}
+            <a href="{{ resume.github }}" target="_blank">
+                <button type="button" class="btn btn-dark">GitHub</button> 
+            </a>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

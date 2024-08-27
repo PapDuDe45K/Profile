@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}About Me{% endblock %}
+
+{% block content %}
+<div class="about-page">
+    <h2>About Me</h2>
+    
+    <h3>Skills</h3>
+    <div class="progress-container">
+        <div class="progress-bar" style="width: 90%; background-color: #f89820;" data-skill="Java Programming">Java</div>
+    </div>
+    <div class="progress-container">
+        <div class="progress-bar" style="width: 80%; background-color: #306998;" data-skill="Python Data Visualization">Python</div>
+    </div>
+    <div class="progress-container">
+        <div class="progress-bar" style="width: 70%; background-color: #006400;" data-skill="Database Management">Database Management</div>
+    </div>
+    <div class="progress-container">
+        <div class="progress-bar" style="width: 75%; background-color: #d9534f;" data-skill="Software Engineering Agile Methodologies">Agile</div>
+    </div>
+
+    <h3>Skill Badges</h3>
+    <div class="badge-container">
+        <div class="badge">
+            <img src="{% static 'java.png' %}" alt="Java Badge">
+            <p>Java</p>
+        </div>
+        <div class="badge">
+            <img src="{% static 'python.png' %}" alt="Python Badge">
+            <p>Python</p>
+        </div>
+        <div class="badge">
+            <img src="{% static 'mys.png' %}" alt="Database Badge">
+            <p>Database Management</p>
+        </div>
+        <div class="badge">
+            <img src="{% static 'agility.png' %}" alt="Agile Badge">
+            <p>Agile</p>
+        </div>
+    </div>
+
+    <h3>Education</h3>
+    <p><strong>Dip in Information Technology and Application Development</strong><br>
+    Sol Plaatje University, Kimberly, South Africa<br>
+    02/2022 - Present</p>
+
+    <p><strong>NSC</strong><br>
+    Hoérskool Sanniehof, Sannieshof, South Africa<br>
+    01/2016 - 12/2019<br>
+    Enjoyed Field Hockey 1st team and the school Cheerleading team.</p>
+</div>
+
+<script>
+    document.querySelectorAll('.progress-bar').forEach(bar => {
+        bar.textContent = bar.getAttribute('data-skill'); // Show skill name
+    });
+</script>
+{% endblock %}
