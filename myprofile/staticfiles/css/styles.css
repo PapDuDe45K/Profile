@@ -1,0 +1,154 @@
+/* General Body Styling */
+body {
+    background-color: #436a93; /* Light background */
+    font-family: 'Poppins', sans-serif; /* Modern font */
+    color: #c87070;
+}
+
+/* Header and Footer */
+header, footer {
+    background-color: #448c42c2; /* Dark Slate Blue */
+    color: #EAECEE; /* Off-white text */
+    padding: 10px 20px; /* Padding for better spacing */
+    text-align: center;
+}
+
+/* Profile Picture Styling */
+.profile-picture {
+    border-radius: 90%;
+    width: 180px; /* Adjusted size */
+    height: 180px; /* Adjusted size */
+    object-fit: cover;
+    border: 2px solid #007BFF; /* Cool border */
+    transition: transform 0.3s ease; /* Animation on hover */
+}
+
+.profile-picture:hover {
+    transform: scale(1.1); /* Scale effect on hover */
+}
+
+/* Custom Section Styling */
+.custom-section {
+    background-color: #26c1c9a0; /* White background for contrast */
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 10, 0, 1.1); /* More prominent shadow */
+    margin: 20px auto;
+    max-width: 600px; /* Centered with max width */
+    text-align: center; /* Center content */
+    color: #FDFEFE; /* Near white text */
+    transition: transform 0.3s ease; /* Animation on hover */
+}
+
+.custom-section:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+}
+
+/* Button Styling */
+.btn-primary {
+    background-color: #28a745; /* Green button */
+    border: none;
+    color: #FFFFFF; /* White text */
+}
+
+.btn-primary:hover {
+    background-color: #218838; /* Darker green on hover */
+}
+
+/* Social Links Styling */
+.social-links a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #007BFF; /* Primary color for links */
+    font-weight: bold;
+}
+
+.social-links a:hover {
+    text-decoration: underline; /* Underline effect on hover */
+}
+
+/* Navbar Styling */
+.navbar-brand {
+    font-size: 1.5rem; /* Slightly larger font for prominence */
+    font-weight: bold; /* Bold for emphasis */
+    color: #EAECEE; /* Off-white text for brand name */
+    margin-right: 20px; /* Spacing between brand and links */
+}
+
+.navbar-nav .nav-link {
+    font-size: 1.1rem; /* Slightly larger font size */
+    color: #EAECEE; /* Off-white text for links */
+    margin-left: 15px; /* Spacing between links */
+    font-weight: 500; /* Medium weight for better visibility */
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.navbar-nav .nav-link:hover {
+    color: #FFD700 !important; /* Gold color on hover */
+    text-decoration: none; /* No underline on hover */
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+    .profile-picture {
+        width: 100px; /* Smaller size for mobile */
+        height: 100px; /* Smaller size for mobile */
+    }
+
+    .custom-section {
+        padding: 20px;
+    }
+
+    .navbar-nav {
+        background-color: #1b232b; /* Consistent background color */
+        padding: 10px;
+    }
+
+    .navbar-nav .nav-link {
+        color: #EAECEE; /* Maintain off-white color */
+        margin: 10px 0; /* Spacing in vertical stack */
+    }
+}
+
+.navbar-nav .nav-link:focus {
+    outline: 2px dashed #007BFF; /* Add a focus outline */
+}
+
+/* Progress Bars */
+.progress-container {
+    position: relative;
+    width: 100%;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    margin: 10px 0;
+}
+
+.progress-bar {
+    height: 30px;
+    line-height: 30px;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+    padding: 0 10px;
+    font-weight: bold;
+}
+
+/* Badges */
+.badge-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.badge {
+    text-align: center;
+    flex: 1 0 200px;
+}
+
+.badge img {
+    width: 100px;
+    height: auto;
+    border-radius: 50%;
+}
