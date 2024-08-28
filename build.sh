@@ -1,5 +1,5 @@
 #!/bin/bash
-set -0 errexit
+#set -0 errexit
 #python manage.py migrate
 
 pip install -r requirements.txt
