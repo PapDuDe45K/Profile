@@ -59,9 +59,15 @@ WSGI_APPLICATION = 'myprofile.wsgi.application'
 
 # Database
 if 'DATABASE_URL' in os.environ:
-    DATABASES = {
-        'default': dj_database_url.parse(os.getenv('DATABASE_URL'))
-    }
+   DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': 'railway',
+	    'USER': 'postgres',
+	    'PASSWORD': 'bNWhxbtgWzabBzVpbtsHegnSIYoEthQM',
+            'HOST': 'meticulous-empathy.railway.internal',
+            'PORT': '5432',
+        }}
 else:
     DATABASES = {
         'default': {
@@ -97,7 +103,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     BASE_DIR / "resume" / "static",
 ]
-
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 # Define the location for collected static files
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
