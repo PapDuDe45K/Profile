@@ -59,15 +59,9 @@ WSGI_APPLICATION = 'myprofile.wsgi.application'
 
 # Database
 if 'DATABASE_URL' in os.environ:
-   DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'railway',
-	    'USER': 'postgres',
-	    'PASSWORD': 'bNWhxbtgWzabBzVpbtsHegnSIYoEthQM',
-            'HOST': 'meticulous-empathy.railway.internal',
-            'PORT': '5432',
-        }}
+     DATABASES = {
+        'default': dj_database_url.parse(os.environ['DATABASE_URL']),
+    }
 else:
     DATABASES = {
         'default': {
