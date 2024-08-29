@@ -2,10 +2,17 @@ services:
   - type: web
     name: django-app
     runtime: python
-    buildCommand: "pip install -r requirements.txt"
-    startCommand: "python waitress_server.py"
+    buildCommand: |
+      pip install -r requirements.txt
+      python manage.py collectstatic --noinput
+      python manage.py migrate
+    startCommand: "waitress-serve --port=$PORT myprofile.wsgi:application"
     envVars:
       - key: DJANGO_SETTINGS_MODULE
         value: myprofile.settings
       - key: PYTHONPATH
         value: /opt/render/project/src
+      - key: DATABASE_URL
+        value: postgres://profileldb_98nx_user:<P8nZZHvwOkUEqjgXSFv12oLXveofthwD>@dpg-cr8eg3i3esus73b50k00-a:5432/profileldb_98nx
+      - key: SECRET_KEY
+        value: ZT4ebwr_hmhAQRb5inm1aLfwBbrCMAZ94nv3pS944nreBXl47CUWSAOOX0RqdgzLTo  # Replace with your generated secret key
