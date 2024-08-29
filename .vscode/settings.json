@@ -1,5 +1,8 @@
 {
     "cSpell.words": [
         "myprofile"
+    ],
+    "python.analysis.extraPaths": [
+        "./myprofile"
     ]
 }
