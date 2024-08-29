@@ -1,4 +1,4 @@
-from myprofile.wsgi import application
+from myprofile.myprofile.wsgi import application
 from waitress import serve
 
 
