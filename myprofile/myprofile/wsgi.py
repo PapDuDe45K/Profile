@@ -14,5 +14,4 @@ from django.core.wsgi import get_wsgi_application
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'myprofile.settings')
 
 application = get_wsgi_application()
-
-app = application#for conneting to vercel vercel.app
+#app = application
