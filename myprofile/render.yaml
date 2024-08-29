@@ -7,3 +7,5 @@ services:
     envVars:
       - key: DJANGO_SETTINGS_MODULE
         value: myprofile.settings
+      - key: PYTHONPATH
+        value: /opt/render/project/src/myprofile
