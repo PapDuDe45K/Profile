@@ -7,12 +7,12 @@ import dj_database_url
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-ut#!xk!oy$uy5^fqaxi+o(qa1e3p=-nm3$tg#+)q%=3@)*iua!'
+SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', 'django-insecure-ut#!xk!oy$uy5^fqaxi+o(qa1e3p=-nm3$tg#+)q%=3@)*iua!')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = os.getenv('DEBUG', 'False') == 'True'
 
-ALLOWED_HOSTS = ['profile-o4od.onrender.com', '.vercel.app']
+ALLOWED_HOSTS = ['profile-o4od.onrender.com', '127.0.0.1', 'localhost']
 
 # Application definition
 INSTALLED_APPS = [
@@ -98,10 +98,10 @@ STATICFILES_DIRS = [
     BASE_DIR / "resume" / "static",
 ]
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
-# Define the location for collected static files
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-#django_heroku.settings(locals())
+# Enable Heroku settings
+django_heroku.settings(locals())
 
 # Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
